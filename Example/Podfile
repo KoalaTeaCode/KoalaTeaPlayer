@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KoalaTeaPlayer_Example' do
+  pod 'KoalaTeaPlayer', :path => '../'
+
+  target 'KoalaTeaPlayer_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
