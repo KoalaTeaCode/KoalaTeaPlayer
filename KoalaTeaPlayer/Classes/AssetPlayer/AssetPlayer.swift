@@ -519,15 +519,15 @@ public class AssetPlayer: NSObject {
 
 // MARK: Playback Control Methods.
 extension AssetPlayer {
-    func play() {
+    public func play() {
         self.state = .playing
     }
     
-    func pause() {
+    public func pause() {
         self.state = .paused
     }
     
-    func togglePlayPause() {
+    public func togglePlayPause() {
         guard asset != nil else { return }
         
         if self.player.rate != 1.0 {
@@ -540,7 +540,7 @@ extension AssetPlayer {
         }
     }
     
-    func stop() {
+    public func stop() {
         self.state = .stopped
     }
     
@@ -563,7 +563,7 @@ extension AssetPlayer {
         NotificationCenter.default.post(name: AssetPlayer.previousTrackNotification, object: nil, userInfo: [Asset.nameKey: asset?.assetName])
     }
     
-    func skipForward(_ interval: TimeInterval) {
+    public func skipForward(_ interval: TimeInterval) {
         guard asset != nil else { return }
         
         let currentTime = self.player.currentTime()
@@ -573,7 +573,7 @@ extension AssetPlayer {
         self.seekTo(newTime)
     }
     
-    func skipBackward(_ interval: TimeInterval) {
+    public func skipBackward(_ interval: TimeInterval) {
         guard asset != nil else { return }
         
         let currentTime = self.player.currentTime()
@@ -583,7 +583,7 @@ extension AssetPlayer {
         self.seekTo(newTime)
     }
     
-    func seekTo(_ newPosition: CMTime) {
+    public func seekTo(_ newPosition: CMTime) {
         guard asset != nil else { return }
         self.player.seek(to: newPosition, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero, completionHandler: { (_) in
             self.updatePlaybackRateMetadata()
@@ -591,7 +591,7 @@ extension AssetPlayer {
         })
     }
     
-    func seekTo(interval: TimeInterval) {
+    public func seekTo(interval: TimeInterval) {
         guard asset != nil else { return }
         let newPosition = CMTimeMakeWithSeconds(interval, 1)
         self.player.seek(to: newPosition, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero, completionHandler: { (_) in
@@ -600,25 +600,25 @@ extension AssetPlayer {
         })
     }
     
-    func changePlayerSpeedTo(speed: Float) {
+    public func changePlayerSpeedTo(speed: Float) {
         guard asset != nil else { return }
         
         rate = speed
     }
     
-    func beginRewind() {
+    public func beginRewind() {
         guard asset != nil else { return }
         
         rate = max(player.rate - 2.0, -2.0)
     }
     
-    func beginFastForward() {
+    public func beginFastForward() {
         guard asset != nil else { return }
         
         rate = min(player.rate + 2.0, 2.0)
     }
     
-    func endRewindFastForward() {
+    public func endRewindFastForward() {
         guard asset != nil else { return }
         
         rate = 1.0

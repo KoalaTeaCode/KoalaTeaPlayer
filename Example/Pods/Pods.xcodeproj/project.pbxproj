@@ -39,34 +39,34 @@
 		1EBBADD62E9DDE60E194950F2C85CD7E /* Pods-KoalaTeaPlayer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KoalaTeaPlayer_Example-frameworks.sh"; sourceTree = "<group>"; };
 		20EF68FE9E3904B200157FD6914DEB19 /* Pods-KoalaTeaPlayer_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KoalaTeaPlayer_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		28907AC63B29998C0CA35642C85FA381 /* Pods-KoalaTeaPlayer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KoalaTeaPlayer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		31D3B0D1254B97B0980EC4E75310D51B /* Pods_KoalaTeaPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoalaTeaPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31D3B0D1254B97B0980EC4E75310D51B /* Pods_KoalaTeaPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KoalaTeaPlayer_Tests.framework; path = "Pods-KoalaTeaPlayer_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B50C998B2122F086577772E54633A2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37724FDF68556C9E545FA9D021EB239F /* Asset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
-		38CB327E3F460AF7C447DF7A9FD09DA6 /* Pods-KoalaTeaPlayer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KoalaTeaPlayer_Example.modulemap"; sourceTree = "<group>"; };
+		38CB327E3F460AF7C447DF7A9FD09DA6 /* Pods-KoalaTeaPlayer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KoalaTeaPlayer_Example.modulemap"; sourceTree = "<group>"; };
 		4154E8EC0643E292156E05E0F5F31AAC /* RemoteCommandManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RemoteCommandManager.swift; sourceTree = "<group>"; };
 		46D6F9F1063B1A19D79AC914AA57BF0B /* AssetPlaybackManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssetPlaybackManager.swift; sourceTree = "<group>"; };
 		4D76EB75AD42DEACE391B30B49649683 /* Pods-KoalaTeaPlayer_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KoalaTeaPlayer_Example-resources.sh"; sourceTree = "<group>"; };
 		5C36C2F5126A83F868E2E872F8EDCFFF /* Pods-KoalaTeaPlayer_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KoalaTeaPlayer_Tests-dummy.m"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		69CD4C7CF4AAE88BBB49B49A287586BD /* Pods_KoalaTeaPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoalaTeaPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69CD4C7CF4AAE88BBB49B49A287586BD /* Pods_KoalaTeaPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KoalaTeaPlayer_Example.framework; path = "Pods-KoalaTeaPlayer_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7272D9BA6AB6DECFD325BF5B89E5350E /* KoalaTeaPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KoalaTeaPlayer.xcconfig; sourceTree = "<group>"; };
 		7D96DB93EE2D2043892708F964C87525 /* Pods-KoalaTeaPlayer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KoalaTeaPlayer_Example-dummy.m"; sourceTree = "<group>"; };
 		843BC6B954B316D996B8C47B8BE46BC7 /* Pods-KoalaTeaPlayer_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KoalaTeaPlayer_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		855B56E3D432660022679054F12B9A9B /* KoalaTeaPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KoalaTeaPlayer-umbrella.h"; sourceTree = "<group>"; };
 		86DEC1B79007349A9A9D3FBA7F9A57CF /* Pods-KoalaTeaPlayer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KoalaTeaPlayer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9186CB124604EBFC4AF81A5045495FDE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9605BEC31FBDC168760699C7AA464979 /* Pods-KoalaTeaPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KoalaTeaPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
-		9E0C14A8B2B603B2B161518293BEC71C /* Pods-KoalaTeaPlayer_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KoalaTeaPlayer_Tests.modulemap"; sourceTree = "<group>"; };
+		9E0C14A8B2B603B2B161518293BEC71C /* Pods-KoalaTeaPlayer_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KoalaTeaPlayer_Tests.modulemap"; sourceTree = "<group>"; };
 		A35178516A6FA109CFE4C45366D700BE /* Pods-KoalaTeaPlayer_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KoalaTeaPlayer_Tests-umbrella.h"; sourceTree = "<group>"; };
 		A547205794F642D8DAD1C52C44902435 /* Pods-KoalaTeaPlayer_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KoalaTeaPlayer_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B0F96186CE09350E3FFDA58673EB6AF6 /* KoalaTeaPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KoalaTeaPlayer-dummy.m"; sourceTree = "<group>"; };
-		B703305668AACE236830F09A5E4E961F /* KoalaTeaPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = KoalaTeaPlayer.modulemap; sourceTree = "<group>"; };
+		B703305668AACE236830F09A5E4E961F /* KoalaTeaPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = KoalaTeaPlayer.modulemap; sourceTree = "<group>"; };
 		C9262CF069A650305FAEB300B4B70994 /* Pods-KoalaTeaPlayer_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KoalaTeaPlayer_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		CD0A0EB5C76868C89A7F593287290ED9 /* Pods-KoalaTeaPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KoalaTeaPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E38085DEB467F4D433ECCB18C94EF4D4 /* Pods-KoalaTeaPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KoalaTeaPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E3FAF1D9DF6B4A13593F239CD43DAB2D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E671083B05ED5DB6E366C982AD3D6542 /* KoalaTeaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KoalaTeaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E671083B05ED5DB6E366C982AD3D6542 /* KoalaTeaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KoalaTeaPlayer.framework; path = KoalaTeaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C24F67281D62EF40714496FFCA8F58 /* Pods-KoalaTeaPlayer_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KoalaTeaPlayer_Example-umbrella.h"; sourceTree = "<group>"; };
 		EFA3E9747B60A9023BEBB892DD99F611 /* PlayerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		F4ECCC8BEE1F85EC45F71EC50C5E2538 /* Pods-KoalaTeaPlayer_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KoalaTeaPlayer_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -508,7 +508,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_VERSION = 4.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
@@ -603,12 +602,11 @@
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		CCE347884370721FF7CFBF54FB0B0FA1 /* Debug */ = {
+		DC9371DBAC1DBDA0B39431083477C98A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7272D9BA6AB6DECFD325BF5B89E5350E /* KoalaTeaPlayer.xcconfig */;
 			buildSettings = {
@@ -639,7 +637,7 @@
 			};
 			name = Debug;
 		};
-		F1A15375BA735EFAEEA702B69E273F43 /* Release */ = {
+		EFEDEBD90C15A76CBAA2B33A7C4A0EB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7272D9BA6AB6DECFD325BF5B89E5350E /* KoalaTeaPlayer.xcconfig */;
 			buildSettings = {
@@ -738,8 +736,8 @@
 		B9BC2AB7AA9836C327E4C76327F43C57 /* Build configuration list for PBXNativeTarget "KoalaTeaPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CCE347884370721FF7CFBF54FB0B0FA1 /* Debug */,
-				F1A15375BA735EFAEEA702B69E273F43 /* Release */,
+				DC9371DBAC1DBDA0B39431083477C98A /* Debug */,
+				EFEDEBD90C15A76CBAA2B33A7C4A0EB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

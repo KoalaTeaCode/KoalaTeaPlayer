@@ -1,5 +1,5 @@
 PODS:
-  - KoalaTeaPlayer (0.1.0)
+  - KoalaTeaPlayer (0.1.1)
 
 DEPENDENCIES:
   - KoalaTeaPlayer (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  KoalaTeaPlayer: 801715b78762e627afed69b3cc8aaf40b2d1a7fc
+  KoalaTeaPlayer: bf0bc0d8a0100c125ca1ccf3f88ca8648cb1645e
 
 PODFILE CHECKSUM: 97942a1734cb2e4121fd1c2c6d998dc908e087e3
 
