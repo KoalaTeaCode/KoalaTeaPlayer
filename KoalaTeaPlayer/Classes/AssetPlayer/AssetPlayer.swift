@@ -101,6 +101,13 @@ public class AssetPlayer: NSObject {
     public var timeElapsedText: String = ""
     public var durationText: String = ""
     
+    public var timeLeftText: String {
+        get {
+            let timeLeft = duration - currentTime
+            return self.createTimeString(time: Float(timeLeft))
+        }
+    }
+    
     public var maxSecondValue: Float = 0
     
     public var duration: Double {

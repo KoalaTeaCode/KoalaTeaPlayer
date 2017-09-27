@@ -88,6 +88,7 @@ extension ViewController: AssetPlayerDelegate {
     func playerCurrentTimeDidChange(_ player: AssetPlayer) {
         // Current time changed, update sliders accordingly
         print("currentTime changed")
+        print(player.timeLeftText)
     }
     
     func playerPlaybackDidEnd(_ player: AssetPlayer) {
