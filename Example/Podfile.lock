@@ -1,0 +1,16 @@
+PODS:
+  - KoalaTeaPlayer (0.1.0)
+
+DEPENDENCIES:
+  - KoalaTeaPlayer (from `../`)
+
+EXTERNAL SOURCES:
+  KoalaTeaPlayer:
+    :path: ../
+
+SPEC CHECKSUMS:
+  KoalaTeaPlayer: 801715b78762e627afed69b3cc8aaf40b2d1a7fc
+
+PODFILE CHECKSUM: 97942a1734cb2e4121fd1c2c6d998dc908e087e3
+
+COCOAPODS: 1.4.0.beta.1
