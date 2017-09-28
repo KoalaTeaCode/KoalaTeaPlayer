@@ -32,8 +32,8 @@ class ViewController: UIViewController {
         let movieURL = URL(string: urlString)
         
         let artworkURL = URL(string: "https://www.w3schools.com/w3images/fjords.jpg")
-        
-        let asset = Asset(assetName: "Test", url: movieURL!, artworkURL: artworkURL)
+        let savedTimeInSeconds: Float = 1000
+        let asset = Asset(assetName: "Test", url: movieURL!, artworkURL: artworkURL, savedTime: savedTimeInSeconds)
         self.asset = asset
     }
     
@@ -88,6 +88,8 @@ extension ViewController: AssetPlayerDelegate {
     func playerCurrentTimeDidChange(_ player: AssetPlayer) {
         // Current time changed, update sliders accordingly
         print("currentTime changed")
+        print(player.currentTime)
+        print(player.timeElapsedText)
         print(player.timeLeftText)
     }
     

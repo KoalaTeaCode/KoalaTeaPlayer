@@ -16,21 +16,29 @@ public class Asset {
     // MARK: Properties
     
     /// The name of the asset to present in the application.
-    var assetName: String = ""
+    public var assetName: String = ""
     
     // Custom artwork
-    var artworkURL: URL? = nil
+    public var artworkURL: URL? = nil
     
     /// The `AVURLAsset` corresponding to an asset in either the application bundle or on the Internet.
-    var urlAsset: AVURLAsset
+    public var urlAsset: AVURLAsset
     
-    let savedTime: Float = 0
+    public var savedTime: Float = 0 // This is in seconds
     
-    public init(assetName: String, url: URL, artworkURL: URL? = nil) {
+    // @TODO: Idk if CMTime is the right thing to use
+    public var savedCMTime: CMTime {
+        get {
+            return CMTimeMake(Int64(savedTime), 1)
+        }
+    }
+    
+    public init(assetName: String, url: URL, artworkURL: URL? = nil, savedTime: Float = 0) {
         self.assetName = assetName
         let avURLAsset = AVURLAsset(url: url)
         self.urlAsset = avURLAsset
         self.artworkURL = artworkURL
+        self.savedTime = savedTime
     }
 }
 

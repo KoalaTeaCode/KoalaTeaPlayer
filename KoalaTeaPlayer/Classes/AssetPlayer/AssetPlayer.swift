@@ -128,9 +128,7 @@ public class AssetPlayer: NSObject {
     
     public var asset: Asset? {
         didSet {
-            //@TODO: use rest of Asset properties
-            
-            guard let newAsset = asset?.urlAsset else { return }
+            guard let newAsset = self.asset else { return }
             
             asynchronouslyLoadURLAsset(newAsset)
         }
@@ -282,13 +280,13 @@ public class AssetPlayer: NSObject {
     
     // MARK: - Asset Loading
     
-    func asynchronouslyLoadURLAsset(_ newAsset: AVURLAsset) {
+    func asynchronouslyLoadURLAsset(_ newAsset: Asset) {
         /*
          Using AVAsset now runs the risk of blocking the current thread (the
          main UI thread) whilst I/O happens to populate the properties. It's
          prudent to defer our work until the properties we need have been loaded.
          */
-        newAsset.loadValuesAsynchronously(forKeys: AssetPlayer.assetKeysRequiredToPlay) {
+        newAsset.urlAsset.loadValuesAsynchronously(forKeys: AssetPlayer.assetKeysRequiredToPlay) {
             /*
              The asset invokes its completion handler on an arbitrary queue.
              To avoid multiple threads using our internal state at the same time
@@ -300,7 +298,7 @@ public class AssetPlayer: NSObject {
                  `self.asset` has already changed! No point continuing because
                  another `newAsset` will come along in a moment.
                  */
-                guard newAsset == self.asset?.urlAsset else { return }
+                guard newAsset == self.asset else { return }
                 
                 /*
                  Test whether the values of each of the keys we need have been
@@ -309,7 +307,7 @@ public class AssetPlayer: NSObject {
                 for key in AssetPlayer.assetKeysRequiredToPlay {
                     var error: NSError?
                     
-                    if newAsset.statusOfValue(forKey: key, error: &error) == .failed {
+                    if newAsset.urlAsset.statusOfValue(forKey: key, error: &error) == .failed {
                         let stringFormat = NSLocalizedString("error.asset_key_%@_failed.description", comment: "Can't use this AVAsset because one of it's keys failed to load")
                         
                         let message = String.localizedStringWithFormat(stringFormat, key)
@@ -321,7 +319,7 @@ public class AssetPlayer: NSObject {
                 }
                 
                 // We can't play this asset.
-                if !newAsset.isPlayable || newAsset.hasProtectedContent {
+                if !newAsset.urlAsset.isPlayable || newAsset.urlAsset.hasProtectedContent {
                     let message = NSLocalizedString("error.asset_not_playable.description", comment: "Can't use this AVAsset because it isn't playable or has protected content")
                     
                     self.handleErrorWithMessage(message)
@@ -333,7 +331,10 @@ public class AssetPlayer: NSObject {
                  We can play this asset. Create a new `AVPlayerItem` and make
                  it our player's current item.
                  */
-                self.playerItem = AVPlayerItem(asset: newAsset)
+                self.playerItem = AVPlayerItem(asset: newAsset.urlAsset)
+                if newAsset.savedTime != 0 {
+                    self.seekTo(newAsset.savedCMTime)
+                }
                 
                 self.playerDelegate?.currentAssetDidChange(self)
             }
