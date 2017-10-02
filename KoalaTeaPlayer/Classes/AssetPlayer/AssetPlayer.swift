@@ -276,6 +276,10 @@ public class AssetPlayer: NSObject {
         removeObserver(self, forKeyPath: #keyPath(AssetPlayer.player.currentItem.status), context: &AssetPlayerKVOContext)
         
         self.removeAVAudioSessionObservers()
+        //@TODO: Simplify removing observers
+        if playerItem != nil {
+            self.removePlayerItemObservers()
+        }
     }
     
     // MARK: - Asset Loading
@@ -611,7 +615,12 @@ extension AssetPlayer {
     public func changePlayerSpeedTo(speed: Float) {
         guard asset != nil else { return }
         
-        rate = speed
+        DispatchQueue.main.async {
+            if (speed == self.rate) {
+                return
+            }
+            self.rate = speed
+        }
     }
     
     public func beginRewind() {

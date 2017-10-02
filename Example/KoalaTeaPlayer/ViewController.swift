@@ -32,8 +32,8 @@ class ViewController: UIViewController {
         let movieURL = URL(string: urlString)
         
         let artworkURL = URL(string: "https://www.w3schools.com/w3images/fjords.jpg")
-        let savedTimeInSeconds: Float = 1000
-        let asset = Asset(assetName: "Test", url: movieURL!, artworkURL: artworkURL, savedTime: savedTimeInSeconds)
+//        let savedTimeInSeconds: Float = 1000
+        let asset = Asset(assetName: "Test", url: movieURL!, artworkURL: artworkURL)
         self.asset = asset
     }
     
@@ -69,7 +69,7 @@ extension ViewController: AssetPlayerDelegate {
     func playerIsSetup(_ player: AssetPlayer) {
         // Max values and initial values should be setup
         // Setup duration text
-        print(player.durationText)
+        print(player.durationText, "is setup")
         // Setup TimeSlider max value
     }
     
