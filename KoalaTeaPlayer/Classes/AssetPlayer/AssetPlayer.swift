@@ -619,7 +619,6 @@ extension AssetPlayer {
             if (newRate == self.rate) {
                 return
             }
-            print("setting new rate to " + String(newRate))
             self.rate = newRate
         }
     }
