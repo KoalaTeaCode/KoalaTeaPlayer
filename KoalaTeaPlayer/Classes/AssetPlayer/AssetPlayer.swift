@@ -116,13 +116,9 @@ public class AssetPlayer: NSObject {
         return CMTimeGetSeconds(currentItem.duration)
     }
     
-    public var rate: Float {
-        get {
-            return player.rate
-        }
-        
-        set {
-            player.rate = newValue
+    public var rate: Float = 1.0 {
+        didSet {
+            player.rate = rate
         }
     }
     
@@ -196,7 +192,9 @@ public class AssetPlayer: NSObject {
 //                return
 //            }
 //
-            self.player.play()
+            //@TODO: Check if there are any issues with "playImmediately"
+            player.playImmediately(atRate: self.rate)
+//            self.player.play()
             break
         case .paused:
             guard asset != nil else { return }
@@ -229,7 +227,7 @@ public class AssetPlayer: NSObject {
     }
     
     // Method to set state so this can be called in init
-    func setStateTo(state: AssetPlayerPlaybackState) {
+    public func setState(to state: AssetPlayerPlaybackState) {
         self.state = state
     }
     
@@ -251,7 +249,7 @@ public class AssetPlayer: NSObject {
         
         playerView?.playerLayer.player = player
         
-        self.setStateTo(state: .setup(asset: asset))
+        self.setState(to: .setup(asset: asset))
         
         // Make sure we don't have a strong reference cycle by only capturing self as weak.
         let interval = CMTimeMake(1, 1)
@@ -336,6 +334,8 @@ public class AssetPlayer: NSObject {
                  it our player's current item.
                  */
                 self.playerItem = AVPlayerItem(asset: newAsset.urlAsset)
+                // Set time pitch algorithm to spectral allows the audio to speed up to 3.0
+                self.playerItem?.audioTimePitchAlgorithm = .spectral
                 if newAsset.savedTime != 0 {
                     self.seekTo(newAsset.savedCMTime)
                 }
@@ -612,14 +612,15 @@ extension AssetPlayer {
         })
     }
     
-    public func changePlayerSpeedTo(speed: Float) {
+    public func changePlayerPlaybackRate(to newRate: Float) {
         guard asset != nil else { return }
         
         DispatchQueue.main.async {
-            if (speed == self.rate) {
+            if (newRate == self.rate) {
                 return
             }
-            self.rate = speed
+            print("setting new rate to " + String(newRate))
+            self.rate = newRate
         }
     }
     

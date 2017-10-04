@@ -9,6 +9,8 @@
 import UIKit
 import KoalaTeaPlayer
 
+import AVFoundation
+
 class ViewController: UIViewController {
     
     public var asset: Asset! {
@@ -35,6 +37,18 @@ class ViewController: UIViewController {
 //        let savedTimeInSeconds: Float = 1000
         let asset = Asset(assetName: "Test", url: movieURL!, artworkURL: artworkURL)
         self.asset = asset
+        self.assetPlaybackManager.changePlayerPlaybackRate(to: 2.0)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+            print("HERE")
+            // Your code with delay
+            self.assetPlaybackManager.setState(to: .paused)
+
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+                print("here 2")
+                // Your code with delay
+                self.assetPlaybackManager.setState(to: .playing)
+            }
+        }
     }
     
     // Mark: - Asset Playback Manager Setup
