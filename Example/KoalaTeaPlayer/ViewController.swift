@@ -38,16 +38,21 @@ class ViewController: UIViewController {
         let asset = Asset(assetName: "Test", url: movieURL!, artworkURL: artworkURL)
         self.asset = asset
         self.assetPlaybackManager.changePlayerPlaybackRate(to: 2.0)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-            print("HERE")
-            // Your code with delay
-            self.assetPlaybackManager.setState(to: .paused)
-
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-                print("here 2")
-                // Your code with delay
-                self.assetPlaybackManager.setState(to: .playing)
-            }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 40) {
+            self.asset = nil
+//            print("HERE")
+//            // Your code with delay
+//            self.assetPlaybackManager.setState(to: .paused)
+//
+//            for count in 1...10 {
+//                let time = 5 * count
+//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(time)) {
+//                    print("here 2")
+//                    // Your code with delay
+//                    //                self.assetPlaybackManager.setState(to: .playing)
+//                    self.asset = asset
+//                }
+//            }
         }
     }
     
@@ -57,7 +62,7 @@ class ViewController: UIViewController {
         self.assetPlaybackManager.playerDelegate = self
         
         // Set playbackmanager for controls view so we can check state there
-        setupRemoteCommandManager()
+//        setupRemoteCommandManager()
         setupPlayerView()
     }
     

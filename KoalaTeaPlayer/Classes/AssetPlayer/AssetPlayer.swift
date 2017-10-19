@@ -117,9 +117,30 @@ public class AssetPlayer: NSObject {
     }
     
     public var rate: Float = 1.0 {
+        willSet {
+            guard newValue != self.rate else { return }
+        }
         didSet {
             player.rate = rate
+            self.checkAudioRateAndSetTimePitchAlgorithm()
         }
+    }
+    
+    private var currentAVAudioTimePitchAlgorithm: AVAudioTimePitchAlgorithm = .timeDomain {
+        willSet {
+            guard newValue != self.currentAVAudioTimePitchAlgorithm else { return }
+        }
+        didSet {
+            self.playerItem?.audioTimePitchAlgorithm = self.currentAVAudioTimePitchAlgorithm
+        }
+    }
+    
+    private func checkAudioRateAndSetTimePitchAlgorithm() {
+        guard self.rate <= 2.0 else {
+            self.currentAVAudioTimePitchAlgorithm = .spectral
+            return
+        }
+        self.currentAVAudioTimePitchAlgorithm = .timeDomain
     }
     
     public var asset: Asset? {
@@ -187,20 +208,20 @@ public class AssetPlayer: NSObject {
         case .playing:
             guard self.asset != nil else { return }
             
-//            if shouldResumePlaybackAfterInterruption == false {
-//                shouldResumePlaybackAfterInterruption = true
-//                return
-//            }
-//
+            //            if shouldResumePlaybackAfterInterruption == false {
+            //                shouldResumePlaybackAfterInterruption = true
+            //                return
+            //            }
+            //
             //@TODO: Check if there are any issues with "playImmediately"
             player.playImmediately(atRate: self.rate)
-//            self.player.play()
+            //            self.player.play()
             break
         case .paused:
             guard asset != nil else { return }
             
             if state == .interrupted {
-//                shouldResumePlaybackAfterInterruption = false
+                //                shouldResumePlaybackAfterInterruption = false
                 
                 return
             }
@@ -217,7 +238,7 @@ public class AssetPlayer: NSObject {
             break
         case .stopped:
             guard asset != nil else { return }
-
+            
             asset = nil
             playerItem = nil
             self.player.replaceCurrentItem(with: nil)
@@ -335,7 +356,7 @@ public class AssetPlayer: NSObject {
                  */
                 self.playerItem = AVPlayerItem(asset: newAsset.urlAsset)
                 // Set time pitch algorithm to spectral allows the audio to speed up to 3.0
-                self.playerItem?.audioTimePitchAlgorithm = .spectral
+                
                 if newAsset.savedTime != 0 {
                     self.seekTo(newAsset.savedCMTime)
                 }
@@ -384,13 +405,13 @@ public class AssetPlayer: NSObject {
         else if keyPath == #keyPath(AssetPlayer.player.rate) {
             // Update `playPauseButton` image.
             
-//            let newRate = (change?[NSKeyValueChangeKey.newKey] as! NSNumber).doubleValue
-//
-//            let buttonImageName = newRate == 1.0 ? "PauseButton" : "PlayButton"
-//
-//            let buttonImage = UIImage(named: buttonImageName)
-//
-//            playPauseButton.setImage(buttonImage, for: UIControlState())
+            //            let newRate = (change?[NSKeyValueChangeKey.newKey] as! NSNumber).doubleValue
+            //
+            //            let buttonImageName = newRate == 1.0 ? "PauseButton" : "PlayButton"
+            //
+            //            let buttonImage = UIImage(named: buttonImageName)
+            //
+            //            playPauseButton.setImage(buttonImage, for: UIControlState())
             // @TODO: What to do with player rate?
             // Update Metadata
             // @TODO: How many times here?
@@ -416,7 +437,7 @@ public class AssetPlayer: NSObject {
                 handleErrorWithMessage(player.currentItem?.error?.localizedDescription, error:player.currentItem?.error)
             }
         }
-        // All Buffer observer values
+            // All Buffer observer values
         else if keyPath == #keyPath(AVPlayerItem.isPlaybackBufferEmpty) {
             // PlayerEmptyBufferKey
             if let item = self.playerItem {
@@ -504,7 +525,7 @@ public class AssetPlayer: NSObject {
         
         alert.addAction(alertAction)
         
-//        present(alert, animated: true, completion: nil)
+        //        present(alert, animated: true, completion: nil)
     }
     
     // MARK: Convenience
@@ -565,13 +586,13 @@ extension AssetPlayer {
     
     func nextTrack() {
         guard asset != nil else { return }
-
+        
         NotificationCenter.default.post(name: AssetPlayer.nextTrackNotification, object: nil, userInfo: [Asset.nameKey: asset?.assetName])
     }
-
+    
     func previousTrack() {
         guard asset != nil else { return }
-
+        
         NotificationCenter.default.post(name: AssetPlayer.previousTrackNotification, object: nil, userInfo: [Asset.nameKey: asset?.assetName])
     }
     
@@ -599,7 +620,7 @@ extension AssetPlayer {
         guard asset != nil else { return }
         self.player.seek(to: newPosition, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero, completionHandler: { (_) in
             self.updatePlaybackRateMetadata()
-//            self.checkPaused()
+            //            self.checkPaused()
         })
     }
     
@@ -608,7 +629,7 @@ extension AssetPlayer {
         let newPosition = CMTimeMakeWithSeconds(interval, 1)
         self.player.seek(to: newPosition, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero, completionHandler: { (_) in
             self.updatePlaybackRateMetadata()
-//            self.checkPaused()
+            //            self.checkPaused()
         })
     }
     
@@ -616,9 +637,6 @@ extension AssetPlayer {
         guard asset != nil else { return }
         
         DispatchQueue.main.async {
-            if (newRate == self.rate) {
-                return
-            }
             self.rate = newRate
         }
     }
@@ -775,3 +793,4 @@ extension AssetPlayer {
         NotificationCenter.default.removeObserver(self, name: .AVAudioSessionInterruption, object: AVAudioSession.sharedInstance())
     }
 }
+
