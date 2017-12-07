@@ -1,5 +1,23 @@
 PODS:
-  - KoalaTeaPlayer (0.1.1)
+  - KoalaTeaPlayer (0.1.7):
+    - KTResponsiveUI
+    - SnapKit
+    - SwifterSwift
+  - KTResponsiveUI (0.2.5)
+  - SnapKit (4.0.0)
+  - SwifterSwift (4.1.0):
+    - SwifterSwift/AppKit (= 4.1.0)
+    - SwifterSwift/CoreGraphics (= 4.1.0)
+    - SwifterSwift/CoreLocation (= 4.1.0)
+    - SwifterSwift/Foundation (= 4.1.0)
+    - SwifterSwift/SwiftStdlib (= 4.1.0)
+    - SwifterSwift/UIKit (= 4.1.0)
+  - SwifterSwift/AppKit (4.1.0)
+  - SwifterSwift/CoreGraphics (4.1.0)
+  - SwifterSwift/CoreLocation (4.1.0)
+  - SwifterSwift/Foundation (4.1.0)
+  - SwifterSwift/SwiftStdlib (4.1.0)
+  - SwifterSwift/UIKit (4.1.0)
 
 DEPENDENCIES:
   - KoalaTeaPlayer (from `../`)
@@ -9,8 +27,11 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  KoalaTeaPlayer: bf0bc0d8a0100c125ca1ccf3f88ca8648cb1645e
+  KoalaTeaPlayer: f94e1c9f42a16f9fd52187678b3125a394567789
+  KTResponsiveUI: b3009bb075d72f4c2ffcb450728c2b442a392137
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwifterSwift: 4d962b5d653760b85266832aff6ab6d08c1b7974
 
 PODFILE CHECKSUM: 97942a1734cb2e4121fd1c2c6d998dc908e087e3
 
-COCOAPODS: 1.4.0.beta.1
+COCOAPODS: 1.3.1

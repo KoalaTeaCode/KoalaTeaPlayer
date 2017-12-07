@@ -1,6 +1,6 @@
 {
   "name": "KoalaTeaPlayer",
-  "version": "0.1.1",
+  "version": "0.1.7",
   "summary": "A short description of KoalaTeaPlayer.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/KoalaTeaCode/KoalaTeaPlayer",
@@ -13,10 +13,21 @@
   },
   "source": {
     "git": "https://github.com/KoalaTeaCode/KoalaTeaPlayer.git",
-    "tag": "0.1.1"
+    "tag": "0.1.7"
   },
   "platforms": {
     "ios": "10.3"
   },
-  "source_files": "KoalaTeaPlayer/Classes/**/*"
+  "source_files": "KoalaTeaPlayer/Classes/**/*",
+  "dependencies": {
+    "SnapKit": [
+
+    ],
+    "SwifterSwift": [
+
+    ],
+    "KTResponsiveUI": [
+
+    ]
+  }
 }

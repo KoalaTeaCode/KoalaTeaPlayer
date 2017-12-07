@@ -9,7 +9,7 @@ import Foundation
 import AVFoundation
 import MediaPlayer
 
-public protocol AssetPlayerDelegate {
+public protocol AssetPlayerDelegate: NSObjectProtocol {
     // Setuo
     func currentAssetDidChange(_ player: AssetPlayer)
     func playerIsSetup(_ player: AssetPlayer)
@@ -70,7 +70,7 @@ public class AssetPlayer: NSObject {
     // MARK: Properties
     
     /// Player delegate.
-    public var playerDelegate: AssetPlayerDelegate?
+    public weak var playerDelegate: AssetPlayerDelegate?
     
     // Attempt load and test these asset keys before playing.
     static let assetKeysRequiredToPlay = [
@@ -242,7 +242,7 @@ public class AssetPlayer: NSObject {
             asset = nil
             playerItem = nil
             self.player.replaceCurrentItem(with: nil)
-            // @tODO: just deinit?
+            // @TODO: just deinit?
             break
         }
     }
@@ -283,6 +283,7 @@ public class AssetPlayer: NSObject {
     }
     
     deinit {
+        print("DEINITING")
         if let timeObserverToken = timeObserverToken {
             player.removeTimeObserver(timeObserverToken)
             self.timeObserverToken = nil
