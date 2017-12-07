@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.3'
 
-  s.source_files = 'KoalaTeaPlayer/Classes/**/*'
+  s.source_files = 'KoalaTeaPlayer/Classes/**/*.swift'
   
   # s.resource_bundles = {
   #   'KoalaTeaPlayer' => ['KoalaTeaPlayer/Assets/*.png']

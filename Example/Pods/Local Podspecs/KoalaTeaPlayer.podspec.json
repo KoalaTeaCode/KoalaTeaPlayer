@@ -18,7 +18,7 @@
   "platforms": {
     "ios": "10.3"
   },
-  "source_files": "KoalaTeaPlayer/Classes/**/*",
+  "source_files": "KoalaTeaPlayer/Classes/**/*.swift",
   "dependencies": {
     "SnapKit": [
 

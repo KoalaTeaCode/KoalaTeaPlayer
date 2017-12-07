@@ -3,7 +3,7 @@ PODS:
     - KTResponsiveUI
     - SnapKit
     - SwifterSwift
-  - KTResponsiveUI (0.2.5)
+  - KTResponsiveUI (0.2.6)
   - SnapKit (4.0.0)
   - SwifterSwift (4.1.0):
     - SwifterSwift/AppKit (= 4.1.0)
@@ -27,8 +27,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  KoalaTeaPlayer: 3f05e3c3545be9e338124ac87ad32acc184e1f84
-  KTResponsiveUI: b3009bb075d72f4c2ffcb450728c2b442a392137
+  KoalaTeaPlayer: acb19b5a30aa551becc0d43804297cf4ec28c613
+  KTResponsiveUI: c8a75fe5270e05749a5ca8d20ab008a285b5e260
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwifterSwift: 4d962b5d653760b85266832aff6ab6d08c1b7974
 
