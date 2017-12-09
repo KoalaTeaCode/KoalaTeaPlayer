@@ -214,7 +214,13 @@ public class AssetPlayer: NSObject {
             //            }
             //
             //@TODO: Check if there are any issues with "playImmediately"
-            player.playImmediately(atRate: self.rate)
+            if #available(iOS 10.0, *) {
+                player.playImmediately(atRate: self.rate)
+            } else {
+                // Fallback on earlier versions
+                player.play()
+                player.rate = self.rate
+            }
             //            self.player.play()
             break
         case .paused:
@@ -588,13 +594,13 @@ extension AssetPlayer {
     func nextTrack() {
         guard asset != nil else { return }
         
-        NotificationCenter.default.post(name: AssetPlayer.nextTrackNotification, object: nil, userInfo: [Asset.nameKey: asset?.assetName])
+        NotificationCenter.default.post(name: AssetPlayer.nextTrackNotification, object: nil, userInfo: [Asset.nameKey: asset?.assetName ?? ""])
     }
     
     func previousTrack() {
         guard asset != nil else { return }
         
-        NotificationCenter.default.post(name: AssetPlayer.previousTrackNotification, object: nil, userInfo: [Asset.nameKey: asset?.assetName])
+        NotificationCenter.default.post(name: AssetPlayer.previousTrackNotification, object: nil, userInfo: [Asset.nameKey: asset?.assetName ?? ""])
     }
     
     public func skipForward(_ interval: TimeInterval) {
@@ -701,9 +707,12 @@ extension AssetPlayer {
         }
         
         let image = UIImage(data: artworkData) ?? UIImage()
-        let artwork = MPMediaItemArtwork(boundsSize: image.size, requestHandler: {  (_) -> UIImage in
-            return image
-        })
+        var artwork = MPMediaItemArtwork(image: image)
+        if #available(iOS 10.0, *) {
+            artwork = MPMediaItemArtwork(boundsSize: image.size, requestHandler: {  (_) -> UIImage in
+                return image
+            })
+        }
         
         nowPlayingInfo[MPMediaItemPropertyTitle] = title
         nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = album
@@ -769,7 +778,12 @@ extension AssetPlayer {
         self.addAVAudioSessionObservers()
         
         do {
-            try audioSession.setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault)
+            if #available(iOS 10.0, *) {
+                try audioSession.setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault)
+            } else {
+                // Fallback on earlier versions
+                try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+            }
         }
         catch {
             print("An error occured setting the audio session category: \(error)")

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KoalaTeaPlayer'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'A short description of KoalaTeaPlayer.'
 
 # This description is used to generate tags and improve search results.
@@ -28,9 +28,9 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/KoalaTeaCode/KoalaTeaPlayer.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.3'
+  s.ios.deployment_target = '9.3'
 
-  s.source_files = 'KoalaTeaPlayer/Classes/**/*.swift'
+  s.source_files = 'KoalaTeaPlayer/Classes/**/*'
   
   # s.resource_bundles = {
   #   'KoalaTeaPlayer' => ['KoalaTeaPlayer/Assets/*.png']
