@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/KTResponsiveUI" "$PODS_CONFIGURATION_BUILD_DIR/KoalaTeaPlayer" "$PODS_CONFIGURATION_BUILD_DIR/SnapKit" "$PODS_CONFIGURATION_BUILD_DIR/SwifterSwift"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/KTResponsiveUI" "$PODS_CONFIGURATION_BUILD_DIR/KoalaTeaPlayer" "$PODS_CONFIGURATION_BUILD_DIR/SnapKit" "$PODS_CONFIGURATION_BUILD_DIR/SwiftIcons" "$PODS_CONFIGURATION_BUILD_DIR/SwifterSwift"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/KTResponsiveUI/KTResponsiveUI.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/KoalaTeaPlayer/KoalaTeaPlayer.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SnapKit/SnapKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwifterSwift/SwifterSwift.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "KTResponsiveUI" -framework "KoalaTeaPlayer" -framework "SnapKit" -framework "SwifterSwift"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/KTResponsiveUI/KTResponsiveUI.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/KoalaTeaPlayer/KoalaTeaPlayer.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SnapKit/SnapKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftIcons/SwiftIcons.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwifterSwift/SwifterSwift.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "KTResponsiveUI" -framework "KoalaTeaPlayer" -framework "SnapKit" -framework "SwiftIcons" -framework "SwifterSwift"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

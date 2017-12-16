@@ -344,8 +344,13 @@ extension YTPlayerView: UIGestureRecognizerDelegate {
                 let newTransform = CGAffineTransform(rotationAngle: (CGFloat.pi / 2))
                 self.transform = newTransform
                 
-                self.height = superView.height
-                self.width = superView.width
+                self.height = superView.width
+                self.width = superView.height
+                
+                if #available(iOS 10.0, *) {
+                    self.height = superView.height
+                    self.width = superView.width
+                }
                 
                 self.layer.position = CGPoint(x: superView.frame.maxX, y: 0)
             })
@@ -356,9 +361,14 @@ extension YTPlayerView: UIGestureRecognizerDelegate {
                 // Transform > Change height and width > Change layer position
                 let newTransform = CGAffineTransform(rotationAngle: -(CGFloat.pi / 2))
                 self.transform = newTransform
+
+                self.height = superView.width
+                self.width = superView.height
                 
-                self.height = superView.height
-                self.width = superView.width
+                if #available(iOS 10.0, *) {
+                    self.height = superView.height
+                    self.width = superView.width
+                }
                 
                 self.layer.position = CGPoint(x: 0, y: superView.frame.maxY)
             })

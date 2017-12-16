@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import SwifterSwift
 import KTResponsiveUI
+import SwiftIcons
 
 /// Player delegate protocol
 public protocol ControlsViewDelegate: NSObjectProtocol {

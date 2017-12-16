@@ -1,8 +1,9 @@
 PODS:
-  - KoalaTeaPlayer (0.2.1):
+  - KoalaTeaPlayer (0.2.2):
     - KTResponsiveUI
     - SnapKit
     - SwifterSwift
+    - SwiftIcons
   - KTResponsiveUI (0.2.6)
   - SnapKit (4.0.0)
   - SwifterSwift (4.1.0):
@@ -18,6 +19,7 @@ PODS:
   - SwifterSwift/Foundation (4.1.0)
   - SwifterSwift/SwiftStdlib (4.1.0)
   - SwifterSwift/UIKit (4.1.0)
+  - SwiftIcons (2.0)
 
 DEPENDENCIES:
   - KoalaTeaPlayer (from `../`)
@@ -27,10 +29,11 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  KoalaTeaPlayer: ced142f54b080e4692568e26385330b876d0dfc1
+  KoalaTeaPlayer: 887bc207728e309177969ce90833414f60d6be9e
   KTResponsiveUI: c8a75fe5270e05749a5ca8d20ab008a285b5e260
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwifterSwift: 4d962b5d653760b85266832aff6ab6d08c1b7974
+  SwiftIcons: 1897f6a88d0e70961c0725c822cb77a3b90145ea
 
 PODFILE CHECKSUM: 97942a1734cb2e4121fd1c2c6d998dc908e087e3
 
