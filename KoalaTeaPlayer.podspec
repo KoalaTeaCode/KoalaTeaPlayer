@@ -32,7 +32,7 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'KoalaTeaPlayer/Classes/**/*'
   
-  s.resource_bundles = {
+  s.ios.resource_bundles = {
    'KoalaTeaPlayer' => ['KoalaTeaPlayer/Assets/*.png']
   }
 
