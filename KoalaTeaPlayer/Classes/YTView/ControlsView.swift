@@ -62,15 +62,12 @@ public class ControlsView: PassThroughView {
     var isWaiting: Bool = false
     var assetPlaybackManager: AssetPlayer!
     var blackViewAlpha: CGFloat = 0.15
-    
-    var smallCircle = #imageLiteral(resourceName: "SmallCircle").filled(withColor: .white)
-    var bigCircle = #imageLiteral(resourceName: "BigCircle").filled(withColor: .white)
-    
+
     var fadingTime = 0.3
 
     override init(frame: CGRect) {
         super.init(frame: frame);
-
+        
         self.addSubview(blackView)
         
         self.blackView.frame = frame

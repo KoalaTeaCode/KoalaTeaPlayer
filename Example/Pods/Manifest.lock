@@ -1,5 +1,5 @@
 PODS:
-  - KoalaTeaPlayer (0.2.2):
+  - KoalaTeaPlayer (0.2.3):
     - KTResponsiveUI
     - SnapKit
     - SwifterSwift
@@ -29,7 +29,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  KoalaTeaPlayer: 887bc207728e309177969ce90833414f60d6be9e
+  KoalaTeaPlayer: af582a3b80a4e784294bf749f40dc0fb93f3117c
   KTResponsiveUI: c8a75fe5270e05749a5ca8d20ab008a285b5e260
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwifterSwift: 4d962b5d653760b85266832aff6ab6d08c1b7974
