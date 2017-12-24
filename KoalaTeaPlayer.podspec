@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KoalaTeaPlayer'
-  s.version          = '0.2.4'
+  s.version          = '0.2.5'
   s.summary          = 'A short description of KoalaTeaPlayer.'
 
 # This description is used to generate tags and improve search results.
@@ -33,7 +33,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'KoalaTeaPlayer/Classes/**/*'
   
   s.ios.resource_bundles = {
-   'KoalaTeaPlayer' => ['KoalaTeaPlayer/Assets/*.png']
+   'KoalaTeaPlayer' => ['KoalaTeaPlayer/Assets/*.{png,xcassets}']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
