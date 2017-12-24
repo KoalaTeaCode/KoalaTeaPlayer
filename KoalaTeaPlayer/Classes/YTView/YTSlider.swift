@@ -24,8 +24,8 @@ protocol AssetPlayerSliderViewProtocol {
     var timeLeftLabel: UILabel { get }
     var previousSliderValue: Float { get }
     var isFirstLoad: Bool { get }
-    var smallCircle: UIImage { get }
-    var bigCircle: UIImage { get }
+    var smallCircle: UIImage? { get }
+    var bigCircle: UIImage? { get }
     var trackHeight: CGFloat { get }
     
     func addPlaybackSlider()
@@ -70,8 +70,20 @@ class AssetPlayerSliderView: PassThroughView, AssetPlayerSliderViewProtocol {
     
     var isFirstLoad: Bool = false
     
-    lazy var smallCircle: UIImage = #imageLiteral(resourceName: "SmallCircle").filled(withColor: self.sliderCircleColor)
-    lazy var bigCircle: UIImage = #imageLiteral(resourceName: "BigCircle").filled(withColor: self.sliderCircleColor)
+    var smallCircle: UIImage? {
+        get {
+            let bundle = Bundle(for: classForCoder.self)
+            guard let image = UIImage(named: "SmallCircle", in: bundle, compatibleWith: nil) else { return nil }
+            return image.filled(withColor: self.sliderCircleColor)
+        }
+    }
+    var bigCircle: UIImage? {
+        get {
+            let bundle = Bundle(for: classForCoder.self)
+            guard let image = UIImage(named: "BigCircle", in: bundle, compatibleWith: nil) else { return nil }
+            return image.filled(withColor: self.sliderCircleColor)
+        }
+    }
     
     var trackHeight: CGFloat = UIView.getValueScaledByScreenHeightFor(baseValue: 2)
     
