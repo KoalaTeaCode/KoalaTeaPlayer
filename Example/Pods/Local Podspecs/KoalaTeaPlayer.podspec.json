@@ -1,6 +1,6 @@
 {
   "name": "KoalaTeaPlayer",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "summary": "A short description of KoalaTeaPlayer.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/KoalaTeaCode/KoalaTeaPlayer",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/KoalaTeaCode/KoalaTeaPlayer.git",
-    "tag": "0.2.4"
+    "tag": "0.2.6"
   },
   "platforms": {
     "ios": "9.3"
@@ -22,7 +22,7 @@
   "ios": {
     "resource_bundles": {
       "KoalaTeaPlayer": [
-        "KoalaTeaPlayer/Assets/*.png"
+        "KoalaTeaPlayer/Assets/*.{png,xcassets}"
       ]
     }
   },
