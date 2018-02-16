@@ -82,6 +82,9 @@ public class AssetPlayer: NSObject {
 
     public var isPlayingLocalVideo = false
     public var startTimeForLoop: Double = 0
+  
+    // Is the asset being played spoken audio (speech)?
+    var willPlaySpokenAudio = false
 
     // Mark: Time Properties
 
@@ -271,7 +274,7 @@ public class AssetPlayer: NSObject {
 
     // MARK: - Life Cycle
 
-    public init(asset: Asset?) {
+    public init(asset: Asset?, isSpokenAudio: Bool = false) {
         super.init()
 
         /*
@@ -286,6 +289,7 @@ public class AssetPlayer: NSObject {
         addObserver(self, forKeyPath: #keyPath(AssetPlayer.player.currentItem.status), options: [.new, .initial], context: &AssetPlayerKVOContext)
 
         playerView?.playerLayer.player = player
+        self.willPlaySpokenAudio = isSpokenAudio
 
         self.setState(to: .setup(asset: asset))
 
@@ -795,7 +799,10 @@ extension AssetPlayer {
 
         do {
             if #available(iOS 10.0, *) {
-                try audioSession.setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault)
+                // If the asset is spoken audio (speech) then use the AVAudioSessionModeSpokenAudio
+                // so that podcast pauses while other apps play sound (e.g. turn-by-turn directions from Maps)
+                try audioSession.setCategory(AVAudioSessionCategoryPlayback, mode:
+                  (self.willPlaySpokenAudio==true) ? AVAudioSessionModeSpokenAudio : AVAudioSessionModeDefault)
             } else {
                 // Fallback on earlier versions
                 try audioSession.setCategory(AVAudioSessionCategoryPlayback)
